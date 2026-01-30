@@ -22,7 +22,7 @@ body{
   background-color: rgb(40,40,40);
   color: white;
 }
-nav{
+nav ul{
   display: flex;
   background-color: black;
   padding: 30px;
@@ -32,7 +32,7 @@ nav{
 nav img{
   width: 120px;
 }
-nav h1{
+nav .title{
   margin-left: auto;
   margin-right: auto;
 }
@@ -40,18 +40,19 @@ nav h1{
 h1,h2,h3{
   color:lightgreen
 }
-section {
+main {
   display: flex;
   gap: 20px;
   flex-direction: column;
   justify-self: center;
   padding: 30px;
   width: 1200px;
+  max-width: 1200px;
 }
-section>div{
+main>.albs{
   display: flex;
 }
-section>div>div{
+main>.albs>li, main>.plists>li{
   padding: 8px;
   background: #000;
   border-radius: 10px;
@@ -67,21 +68,31 @@ section>div>div{
 .albs{
   gap: 20px;
 }
-.plist{
-
+.plist figure{
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 .alb{
+  padding: 15px;
+}
+.alb figure, .alb figcaption{
   display: flex;
   flex-direction: column;
-  padding: 15px;
   gap: 10px;
 }
-section>div>.alb>img{
+main>.albs>.alb>img{
   width: 100%;
 }
-section>div>.alb{
+main>.albs>.alb{
   width: 180px;
 }
-section>div>.plist>img{
+main .plists img{
   width: 100px;
+}
+footer{
+  width: fit-content;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
