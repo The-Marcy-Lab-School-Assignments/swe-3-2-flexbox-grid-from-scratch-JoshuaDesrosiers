@@ -1,7 +1,11 @@
 /* -------------------------------- */
 /* ---------- CSS Reset ----------- */
 /* -------------------------------- */
-
+:root{
+  --bg:rgb(40,40,40);
+  --nav:black;
+  --components:black;
+}
 * {
   margin: 0;
   padding: 0;
@@ -19,12 +23,12 @@ img {
 
 /* Add your styles below */
 body{
-  background-color: rgb(40,40,40);
+  background-color: var(--bg);
   color: white;
 }
 nav ul{
   display: flex;
-  background-color: black;
+  background-color: var(--nav);
   padding: 30px;
   gap: 30px;
   align-items: center;
@@ -52,11 +56,13 @@ main {
 main>.albs{
   display: flex;
 }
-main>.albs>li, main>.plists>li{
-  padding: 8px;
+.albs>li, .plists>li{
   background: #000;
   border-radius: 10px;
+}
+.plists>li{
 
+  padding: 8px;
 }
 .plists{
   gap: 15px;
@@ -67,6 +73,8 @@ main>.albs>li, main>.plists>li{
 }
 .albs{
   gap: 20px;
+  display: flex;
+  flex-direction: row;
 }
 .plist figure{
   display: flex;
@@ -81,14 +89,13 @@ main>.albs>li, main>.plists>li{
   flex-direction: column;
   gap: 10px;
 }
-main>.albs>.alb>img{
-  width: 100%;
-}
-main>.albs>.alb{
+
+.albs>li{
   width: 180px;
 }
 main .plists img{
   width: 100px;
+  height: 100px;
 }
 footer{
   width: fit-content;
