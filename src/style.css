@@ -1,10 +1,16 @@
 /* -------------------------------- */
 /* ---------- CSS Reset ----------- */
 /* -------------------------------- */
-
+:root{
+  --bg: #000000;
+  --card-bg: #1e1e1e;
+  --text: #ffffff;
+  --accent: #1db954;
+}
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
 
@@ -17,3 +23,151 @@ img {
 }
 
 /* Add your styles below */
+body{
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg);
+  padding: 30px;
+}
+header nav ul{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+header nav a{
+  color: var(--text);
+  text-decoration: none;
+}
+header nav a:hover{
+  color: var(--accent);
+}
+.logo{
+  width: 120px;
+}
+
+h1, h2, h3{
+  color: var(--accent);
+}
+h2{
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+main {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+main section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.albs>li, .plists>li{
+  background: var(--card-bg);
+}
+.plists>li{
+  border-radius: 4px;
+  padding: 8px;
+}
+.albs>li{
+  border-radius: 8px;
+}
+
+.plists{
+  gap: 15px;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+}
+.albs{
+  gap: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.plist figure{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.plist figcaption, .alb figcaption{
+  text-align: left;
+}
+.alb{
+  padding: 15px;
+}
+.alb figure, .alb figcaption{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.alb h4{
+  font-weight: bold;
+}
+.alb p{
+  font-size: 0.9rem;
+}
+
+.albs>li{
+  width: 180px;
+}
+main .plists img{
+  width: 100px;
+  height: 100px;
+}
+
+footer{
+  width: fit-content;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer a{
+  color: var(--accent);
+  text-decoration: none;
+}
+footer a:hover{
+  text-decoration: underline;
+}
+
+/* -------------------------------- */
+/* ---------- Media Queries ------- */
+/* -------------------------------- */
+@media (max-width: 900px) {
+  .plists{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .albs{
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  header{
+    flex-direction: column;
+    gap: 15px;
+  }
+  .plists{
+    grid-template-columns: 1fr;
+  }
+  .albs{
+    flex-direction: column;
+  }
+  .albs>li{
+    width: 100%;
+  }
+}
